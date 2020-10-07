@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'weather-icons/css/weather-icons.css';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
       let year = d.getFullYear();
       
       return `${day} ${date} ${month} ${year}`
-  }
+   }
 
   return (
     <div className="app">
@@ -30,7 +31,10 @@ function App() {
           <div className="date">{dateBuilder(new Date())}</div>
         </div>
         <div className="weather-box">
-          <div className="temp">27°C</div>
+          <div className="temp">27&deg; </div>
+          <div className="icon">
+            <i className="wi wi-day-sunny"></i>
+          </div>
           <div className="weather">Sunny</div>
         </div>
       </main>
