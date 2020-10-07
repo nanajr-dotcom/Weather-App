@@ -3,19 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'weather-icons/css/weather-icons.css';
 import Location from './Location';
 import Weatherbox from './Weatherbox';
+import Searchbox from './Searchbox';
 
 
 function App() {
   return (
     <div className="app">
-      <main lSRC >
-        <div className="search-box">
-          <input
-            type="text"
-            className="search-bar"
-            placeholder="Search......"
-          />
-        </div>
+      <main>
+         <Searchbox/>
          <Location/> 
          <Weatherbox/> 
       </main>

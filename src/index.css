@@ -23,6 +23,7 @@ main{
 
 .search-box{
  width: 50%;
+ position: relative;
  margin: 75px auto;
 }
 
