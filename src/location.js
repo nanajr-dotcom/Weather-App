@@ -1,6 +1,6 @@
 import React from 'react';
 
-function location(){
+function Location(){
 
  const dateBuilder = (d) => {
    let months = [
@@ -43,4 +43,4 @@ function location(){
     );
 }
 
-export default location;
+export default Location;
