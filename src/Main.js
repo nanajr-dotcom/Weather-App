@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState} from 'react';
 import Searchbox from './Searchbox';
 import Location from './Location';
 import Weatherbox from './Weatherbox';
 
- function Main(){
+
+
+ function Main({ setUserLoggedIn }){ 
+
     return(
         <>
         <Searchbox/>

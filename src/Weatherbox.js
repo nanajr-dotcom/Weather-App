@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState }from 'react'
+
 
 function Weatherbox() {
+
     return (
       <div className="weather-box">
         <div className="temp">27&deg; </div>
@@ -9,7 +11,7 @@ function Weatherbox() {
         </div>
         <div className="weather">Sunny</div>
       </div>
-    )
+    );
 }
 
 export default Weatherbox;

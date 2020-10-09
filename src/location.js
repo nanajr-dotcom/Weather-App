@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState} from 'react';
+import Time from './Time';
+
 
 function Location(){
 
@@ -35,10 +37,15 @@ function Location(){
    return `${day} ${date} ${month} ${year}`;
  };
 
+
     return (
-      <div className="location-box">
-        <div className="location">Accra, Ghana</div>
-        <div className="date">{dateBuilder(new Date())}</div>
+      <div>
+        <div className="location-box">
+          <div className="location">Accra, Ghana</div>
+          <div className="date">{dateBuilder(new Date())}</div>
+          <Time />
+        </div>
+
       </div>
     );
 }

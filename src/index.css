@@ -15,6 +15,10 @@ body{
   transition: 0.4 ease-out;
 }
 
+.app.warm{
+  background-image: url(./Images/snowy.jpeg)
+}
+
 main{
   min-height: 100vh;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.45));
@@ -53,19 +57,27 @@ main{
 
 .location-box .location{
   color: #FFF;
-  font-size: 32px;
-  font-weight: 500;
+  font-size: 50px;
+  font-weight: 300;
   text-align: center;
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
 .location-box .date{
  color: #FFF;
-  font-size: 20px;
+  font-size:25px;
   font-weight: 300;
   font-style: italic;
   text-align: center;
   text-shadow: 2px 2px rgba(50, 50, 70, 0.5); 
+}
+
+.time{
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 250;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5)
 }
 
 .weather-box {
@@ -74,11 +86,10 @@ main{
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
-  padding: 15px 55px;
-
-  
+  padding: 15px 55px; 
 
 }
+
 
 .weather-box .temp{
   color: #FFF;
