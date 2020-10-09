@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React from 'react';
 import Searchbox from './Searchbox';
 import Location from './Location';
 import Weatherbox from './Weatherbox';
