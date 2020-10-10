@@ -4,6 +4,7 @@ function Loginform({ setUserLoggedIn }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
+  
 
   function handleEmailInput (event){
     setEmail(event.target.value)
@@ -27,19 +28,40 @@ function Loginform({ setUserLoggedIn }) {
     return (
       <form>
         <div className="form-inner">
-          <h2>Login</h2>
-          <div className="form-group">
-            <label htmlfor="email">Email:</label>
-            <input type="email" name="email" id="email" value={email} onChange={handleEmailInput}/>
+          <h2 className="form-group1">Login</h2>
+          <br></br>
+          <div className="form-group2">
+            <label>Email:</label>
+            <input
+              className="search-bar"
+              type="email"
+              name="email"
+              id="email"
+              value={email}
+              onChange={handleEmailInput}
+            />
           </div>
-          <div className="form-group">
-            <label htmlfor="password">Password:</label>
-            <input type="password" name="password" id="password" value={password} onChange={handlePasswordInput}/>
+          <br></br>
+          <div className="form-group2">
+            <label>Password:</label>
+            <input
+              className="search-bar"
+              type="password"
+              name="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordInput}
+            />
           </div>
-          <button onClick={handleLogin}>Login</button> 
+          <br></br>
+          <div className="form-group1">
+            <button className="btn btn-primary shelf-cta" onClick={handleLogin}>
+              <span>Sign In</span>
+            </button>
+          </div>
         </div>
       </form>
-    )
+    );
 }
 
 export default Loginform;
