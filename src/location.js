@@ -41,15 +41,13 @@ function Location( weather ){
     return (
       
      <div> 
-        {(typeof weather.main !="undefined") ? (
           <div>
             <div className="location-box">
-              <div className="location">{weather.name}, {weather.sys.country}</div>
+              <div className="location">Accra, Ghana</div>
               <div className="date">{dateBuilder(new Date())}</div>
               <Time />
             </div>
          </div>
-        ) : ('')}
      </div>
       
     

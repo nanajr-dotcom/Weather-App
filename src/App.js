@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'weather-icons/css/weather-icons.css';
 import Main from './Main';
 import Loginform from './Loginform';
+import Homescreen from './Homescreen';
 
 
 
@@ -21,7 +22,7 @@ function App() {
     <div className="app">
       <main>
         {!userLoggedIn && <Loginform setUserLoggedIn={setUserLoggedIn} />}
-        {userLoggedIn && <Main setUserLoggedIn={setUserLoggedIn} />}
+        {userLoggedIn && <Main  setUserLoggedIn={setUserLoggedIn} />}
       </main>
     </div>
   );

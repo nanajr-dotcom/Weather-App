@@ -1,6 +1,5 @@
 import React from 'react';
 import Searchbox from './Searchbox';
-import Location from './Location';
 import Weatherbox from './Weatherbox';
 
 
@@ -9,8 +8,7 @@ import Weatherbox from './Weatherbox';
 
     return(
         <>
-        <Searchbox/>
-         <Location/> 
+         <Searchbox/> 
          <Weatherbox/> 
          </>
 
