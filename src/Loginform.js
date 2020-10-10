@@ -26,14 +26,16 @@ function Loginform({ setUserLoggedIn }) {
   }
 
     return (
-      <form>
+      <form className="bg-modal">
         <div className="form-inner">
-          <h2 className="form-group1">Login</h2>
+          <div className="form-group2">
+          <img src="./Images/avatar.png" alt="avatar"></img>
+          </div>
           <br></br>
           <div className="form-group2">
-            <label>Email:</label>
             <input
               className="search-bar"
+              placeholder="E-Mail"
               type="email"
               name="email"
               id="email"
@@ -43,9 +45,9 @@ function Loginform({ setUserLoggedIn }) {
           </div>
           <br></br>
           <div className="form-group2">
-            <label>Password:</label>
             <input
               className="search-bar"
+              placeholder="Password"
               type="password"
               name="password"
               id="password"

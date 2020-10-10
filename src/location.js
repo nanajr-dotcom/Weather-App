@@ -2,7 +2,7 @@ import React from 'react';
 import Time from './Time';
 
 
-function Location(){
+function Location( weather ){
 
  const dateBuilder = (d) => {
    let months = [
@@ -39,14 +39,20 @@ function Location(){
 
 
     return (
-      <div>
-        <div className="location-box">
-          <div className="location">Accra, Ghana</div>
-          <div className="date">{dateBuilder(new Date())}</div>
-          <Time />
-        </div>
-
-      </div>
+      
+     <div> 
+        {(typeof weather.main !="undefined") ? (
+          <div>
+            <div className="location-box">
+              <div className="location">{weather.name}, {weather.sys.country}</div>
+              <div className="date">{dateBuilder(new Date())}</div>
+              <Time />
+            </div>
+         </div>
+        ) : ('')}
+     </div>
+      
+    
     );
 }
 
