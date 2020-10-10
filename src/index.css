@@ -194,3 +194,8 @@ main{
   cursor: pointer;
 
 }
+.form-inner button{
+  border-radius: 18px;
+  border: 0px;
+}
+
