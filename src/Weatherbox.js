@@ -10,8 +10,18 @@ function Weatherbox( weather ) {
           <i className="wi wi-day-sunny"></i>
         </div>
         <div className="weather">Sunny</div>
+        {minmaxTemp(24,19)}
       </div>
     );
+}
+
+function minmaxTemp(min,max){
+  return (
+    <h3>
+      <span className="px-4">{min}&deg;</span>
+      <span className="px-4">{max}&deg;</span>
+    </h3>
+  );
 }
 
 export default Weatherbox;
