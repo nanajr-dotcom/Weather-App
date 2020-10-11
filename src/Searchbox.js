@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import Location from './Location';
-import search from './Images/search-white.png';
-import Weatherbox from './Weatherbox';
+import Time from './Time';
 const api = {
   key: "8d73894b6447019a3f1b92b5ffe4f46d ",
   base: "api.openweathermap.org/data/2.5/",
@@ -25,6 +23,38 @@ function Searchbox() {
     }
   }
 
+  const dateBuilder = (d) => {
+    let months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+
+    return `${day} ${date} ${month} ${year}`;
+  };
 
 
 
@@ -58,7 +88,25 @@ function Searchbox() {
             </svg>
           </div>
         </div>
-        <Location setWeather={setWeather} />
+
+        <div>
+          <div className="location-box">
+            <div className="location">
+              Accra, Ghana
+            </div>
+            <div className="date">{dateBuilder(new Date())}</div>
+            <Time />
+          </div>
+        </div>
+        <div>
+          <div className="weather-box">
+            <div className="temp">27&deg;</div>
+            <div className="icon">
+              <i className="wi wi-day-sunny"></i>
+            </div>
+            <div className="weather">Sunny</div>
+          </div>
+        </div>
       </>
     );
 }

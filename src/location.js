@@ -1,8 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Time from './Time';
+const api = {
+  key: "8d73894b6447019a3f1b92b5ffe4f46d ",
+  base: "api.openweathermap.org/data/2.5/",
+};
 
 
-function Location( weather ){
+function Location( setWeather){
+    const [query, setQuery] = useState("");
+    const [weather, setWeather] = useState({});
+  const search = (evt) => {
+    if (evt.key === "Enter") {
+      fetch(`${api.base})weather?q=${query}&units=metric&APPID=${api.key}`)
+        .then((res) => res.json())
+        .then((result) => {
+          setWeather(result);
+          setQuery("");
+          console.log();
+        });
+    }
+  };
 
  const dateBuilder = (d) => {
    let months = [
@@ -43,7 +60,7 @@ function Location( weather ){
      <div> 
           <div>
             <div className="location-box">
-              <div className="location">Accra, Ghana</div>
+              <div className="location">{weather.name}, {weather.sys.country}</div>
               <div className="date">{dateBuilder(new Date())}</div>
               <Time />
             </div>

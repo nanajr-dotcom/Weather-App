@@ -1,15 +1,15 @@
 import React from 'react';
 import Searchbox from './Searchbox';
-import Weatherbox from './Weatherbox';
 
 
 
- function Main({ setUserLoggedIn }){ 
+
+ function Main(){ 
 
     return(
         <>
          <Searchbox/> 
-         <Weatherbox/> 
+          
          </>
 
     )
