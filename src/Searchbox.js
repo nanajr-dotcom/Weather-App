@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Time from './Time';
+import logo from './Images/weatherhublogo.png';
 const api = {
   key: "8d73894b6447019a3f1b92b5ffe4f46d ",
   base: "api.openweathermap.org/data/2.5/",
@@ -61,6 +62,7 @@ function Searchbox() {
     return (
       <>
         <div className="header">
+          <img className="header-logo" src={logo} alt="logo"/>
           <div className="search-box1">
             <input
               type="text"
