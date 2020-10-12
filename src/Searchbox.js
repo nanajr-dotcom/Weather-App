@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Time from './Time';
+import "bootstrap/dist/css/bootstrap.min.css";
 import logo from './Images/weatherhublogo.png';
 const api = {
   key: "8d73894b6447019a3f1b92b5ffe4f46d ",
