@@ -2,62 +2,28 @@ import React, { useState } from 'react';
 import Time from './Time';
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from './Images/weatherhublogo.png';
-const api = {
-  key: "8d73894b6447019a3f1b92b5ffe4f46d ",
-  base: "api.openweathermap.org/data/2.5/",
-};
+import Date from './Date';
+import { fetchWeather } from './api/fetchWeather';
 
 
 function Searchbox() {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
 
-  const search = (evt) => {
-    if (evt.key === "Enter") {
-      fetch(`${api.base})weather?q=${query}&units=metric&APPID=${api.key}`)
-        .then(res=> res.json())
-        .then(result => {
-         setWeather(result);
-         setQuery('');
-         console.log();
-        });
-      
+  const search = async (e) => {
+    if (e.key === "Enter") {
+      const data = await fetchWeather(query);
+
+        setWeather(data);
+        setQuery("");
     }
-  }
+   
+    
 
-  const dateBuilder = (d) => {
-    let months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    let days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
+};
 
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
-
-    return `${day} ${date} ${month} ${year}`;
-  };
-
+  
+   
 
 
     return (
@@ -68,7 +34,7 @@ function Searchbox() {
             <input
               type="text"
               className="search-bar"
-              placeholder="City"
+              placeholder="Search any city..."
               onChange={(e) => setQuery(e.target.value)}
               value={query}
               onKeyPress={search}
@@ -79,8 +45,8 @@ function Searchbox() {
         <div>
           <div className="location-box">
             <div className="location">Accra, Ghana</div>
-            <div className="date">{dateBuilder(new Date())}</div>
-            <Time />
+            
+            
           </div>
         </div>
         <div>

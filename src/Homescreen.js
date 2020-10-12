@@ -45,8 +45,9 @@ function Homescreen( {setUserLoggedIn} ) {
       <div className="logo">
         <img className="mainlogo" src={logo} alt="Weatherhub's Logo" />
         <div>
-          <button className="btn btn-primary shelf-cta" onClick={handleShow}>
-            <span>Sign In</span>
+          <div className="location">What's the weather for today?</div>
+          <button className="btn" onClick={handleShow}>
+            Let's find out
           </button>
           <Modal className="bg-modal" show={show} onHide={handleClose}>
             <Modal.Header closeButton></Modal.Header>
