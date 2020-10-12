@@ -41,12 +41,12 @@ main{
   border: none;
   outline: none;
 
-  background-color: rgba(255, 255, 255, 0.514);
+  background-color: rgba(255, 255, 255, 0.664);
   border-radius: 16px 16px 16px 16px;
 
   box-shadow: 0px 5px rgba(0, 0, 0, 0.3);
 
-  color:  #313131;
+  color:  #181818;
   font-size: 20px;
 
   transition: 0.4s ease;
@@ -55,6 +55,8 @@ main{
 .search-box .search-bar:focus{
   background-color: rgba(255, 255, 255, 0.75);
 }
+
+
 
 .location-box{
   margin-top:80px ; 
@@ -335,6 +337,10 @@ input {
 }
 
 .search-box1 .search-bar:focus{
+  background-color: rgb(255, 255, 255);
+}
+
+.search-box1 .search-bar:hover{
   background-color: rgb(255, 255, 255);
 }
 
