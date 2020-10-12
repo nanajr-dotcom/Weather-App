@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import ReactDOM from "react-dom";
 import Modal from "react-bootstrap/Modal";
-import ModalBody from "react-bootstrap/ModalBody";
-import ModalHeader from "react-bootstrap/ModalHeader";
-import ModalFooter from "react-bootstrap/ModalFooter";
-import ModalTitle from "react-bootstrap/ModalTitle";
 import logo from './Images/weatherhub.png';
-import Loginform from './Loginform';
 import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 
@@ -54,7 +50,6 @@ function Homescreen( {setUserLoggedIn} ) {
           </button>
           <Modal className="bg-modal" show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <form>
