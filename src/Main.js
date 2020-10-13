@@ -46,10 +46,10 @@ function Main( { setUserLoggedIn}){
             value={query}
             onKeyPress={search}
           />
-          <button className="btn" onClick={handleLogOut}>
-            Let's find out
-          </button>
         </div>
+        <button className="btn" onClick={handleLogOut}>
+          Logout
+        </button>
       </div>
       <div>
         <div className="location-box">
@@ -60,7 +60,7 @@ function Main( { setUserLoggedIn}){
         <div className="weather-box">
           <div className="temp">{temperature}</div>
           <div className="icon">
-            <img className="wi wi-day-sunny" src={weather_icons} alt="" />
+            <i className="wi wi-day-sunny"> </i>
           </div>
           <div className="weather">Sunny</div>
         </div>
