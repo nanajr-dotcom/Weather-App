@@ -1,4 +1,4 @@
-import React, { useState, } from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "./Images/weatherhublogo.png";
 import { fetchWeather } from "./api/fetchWeather";
@@ -9,7 +9,7 @@ function Main( { setUserLoggedIn}){
   const [query, setQuery] = useState("");
   const [temperature, setTemperature] = useState(null);
   const [location, setLocation] = useState(null)
-  const [weather_icons, setWeather_icons] = useState(null);
+  const [weather_descriptions, setWeather_descriptions] = useState(null);
  
 
   const search = async (e) => {
@@ -22,7 +22,7 @@ function Main( { setUserLoggedIn}){
       setLocation(
         `${data["location"].name} , ${data["location"].country}`
       );
-      setWeather_icons(`${data['current'].weather_icons[0]}`) 
+      setWeather_descriptions(`${data["current"].weather_descriptions}`); 
       setQuery("");
 
     }
@@ -62,11 +62,12 @@ function Main( { setUserLoggedIn}){
           <div className="icon">
             <i className="wi wi-day-sunny"> </i>
           </div>
-          <div className="weather">Sunny</div>
+          <div className="weather">{ weather_descriptions }</div>
         </div>
       </div>
     </>
-  );
+  )
+  ;
 }
 
 export default Main;

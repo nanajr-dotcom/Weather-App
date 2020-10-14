@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
-function Homescreen( {setUserLoggedIn, setUserLoggedOut} ) {
+function Homescreen( {setUserLoggedIn} ) {
    const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
