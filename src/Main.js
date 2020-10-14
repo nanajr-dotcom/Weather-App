@@ -10,6 +10,7 @@ function Main( { setUserLoggedIn}){
   const [temperature, setTemperature] = useState(null);
   const [location, setLocation] = useState(null)
   const [weather_descriptions, setWeather_descriptions] = useState(null);
+  const [weather_icons, setWeather_icons]= useState(null)
  
 
   const search = async (e) => {
@@ -18,10 +19,9 @@ function Main( { setUserLoggedIn}){
       const data = await fetchWeather(query);
       console.log("data", data)
 
+      setWeather_icons(`${data["current"].weather_icons}`)
       setTemperature(`${data["current"].temperature}°C`);
-      setLocation(
-        `${data["location"].name} , ${data["location"].country}`
-      );
+      setLocation( `${data["location"].name} , ${data["location"].country}` );
       setWeather_descriptions(`${data["current"].weather_descriptions}`); 
       setQuery("");
 
