@@ -13,14 +13,7 @@ export const fetchWeather = async (query) => {
   return data;
 };
 
-export const fetchForecast = async () => {
-  const { data } = await axios.get(
-    `http://api.weatherstack.com/forecast?access_key=YOUR_ACCESS_KEY&query=Accra,Tema&forecast_days=6&hourly=1`,
-    {}
-  );
 
-  return data;
-};
 
 
 

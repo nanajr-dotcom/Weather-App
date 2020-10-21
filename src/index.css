@@ -13,6 +13,7 @@ body{
   background-size: cover;
   background-position: bottom;
   transition: 0.4 ease-out;
+  height: 100%
 }
 
 .app.warm{
@@ -127,7 +128,30 @@ main{
   
   text-align: center;
 }
+.weather-box-main{
+  display: flex
+}
 
+
+.history-box{
+    width: 300px;
+  margin-right:  50px;
+  margin-top: 70px;
+  margin-bottom: -50px;
+  background-color: rgba(0, 0, 0, 0.657);
+  border-radius: 16px;
+  padding: 15px 35px;
+  
+  text-align: center;
+  
+}
+
+.history{
+ color: #FFF;
+  font-size: 28px;
+  font-weight: 400; 
+  
+}
 
 .form-inner{
   width: 450px;

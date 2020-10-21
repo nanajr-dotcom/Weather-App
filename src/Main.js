@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "./Images/weatherhublogo.png";
 import { fetchWeather } from "./api/fetchWeather";
 
+
 let storageArray = [];
 function Main( { setUserLoggedIn}){
  
@@ -12,6 +13,7 @@ function Main( { setUserLoggedIn}){
   const [weather_descriptions, setWeather_descriptions] = useState(null);
   const [weather_icons, setWeather_icons]= useState(null)
   const [history, setHistory] = useState(null)
+ 
 
   const search = async (e) => {
     if (e.key === "Enter") {
@@ -28,7 +30,7 @@ function Main( { setUserLoggedIn}){
       localStorage.setItem('browserStorage', JSON.stringify(storageArray));
       getLocalStorage();
 
-
+      
       setWeather_icons(`${data["current"].weather_icons}`)
       setTemperature(`${data["current"].temperature}°C`);
       setLocation( `${data["location"].name} , ${data["location"].country}` );
@@ -37,6 +39,8 @@ function Main( { setUserLoggedIn}){
 
     }
   };
+
+
 
   function handleLogOut(event) {
     event.preventDefault();
@@ -52,8 +56,10 @@ function Main( { setUserLoggedIn}){
     console.log("OnlyFive", OnlyFive)
 
     let mySearchResults = OnlyFive.map((r) => {
-      return <div>
-        {r.location}, {r.temperature}°C
+      return <div className="history-box">
+        <div className="history" >
+          {r.location}, {r.temperature}°C
+        </div>
       </div>
     });
    
@@ -81,13 +87,11 @@ function Main( { setUserLoggedIn}){
           Logout
         </button>
       </div>
-      <div>
-        <div className="location-box">
-          <div className="location">{location}</div>
-        </div>
-      </div>
-      <div>
+     
+      <div className="weather-box-main">
+        
         <div className="weather-box">
+          <div className="weather">{location}</div>
           <div className="temp">{temperature}</div>
           <div className="icon">
             <i className="wi wi-day-sunny"> </i>
@@ -95,7 +99,9 @@ function Main( { setUserLoggedIn}){
           <div className="weather">{ weather_descriptions }</div>
         </div>
       <div>
+
           { history }
+          
       </div>
       </div>
     </>
