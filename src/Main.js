@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "./Images/weatherhublogo.png";
 import { fetchWeather } from "./api/fetchWeather";
 
-
+let storageArray = [];
 function Main( { setUserLoggedIn}){
  
   const [query, setQuery] = useState("");
@@ -11,13 +11,23 @@ function Main( { setUserLoggedIn}){
   const [location, setLocation] = useState(null)
   const [weather_descriptions, setWeather_descriptions] = useState(null);
   const [weather_icons, setWeather_icons]= useState(null)
- 
+  const [history, setHistory] = useState(null)
 
   const search = async (e) => {
     if (e.key === "Enter") {
       console.log("query", query)
       const data = await fetchWeather(query);
       console.log("data", data)
+      storageArray.push({
+        temperature:data.current.temperature,
+        location: data.location.name,
+        weather_descriptions: data.current.weather_descriptions
+
+      })
+
+      localStorage.setItem('browserStorage', JSON.stringify(storageArray));
+      getLocalStorage();
+
 
       setWeather_icons(`${data["current"].weather_icons}`)
       setTemperature(`${data["current"].temperature}°C`);
@@ -32,6 +42,26 @@ function Main( { setUserLoggedIn}){
     event.preventDefault();
     setUserLoggedIn(false)
   }
+
+
+  function getLocalStorage() {
+    let userSearchVar = JSON.parse(localStorage.getItem('browserStorage'));
+    console.log("data in browser", userSearchVar)
+
+    let OnlyFive = userSearchVar.slice(Math.max(userSearchVar.length - 5, 0))
+    console.log("OnlyFive", OnlyFive)
+
+    let mySearchResults = OnlyFive.map((r) => {
+      return <div>
+        {r.location}, {r.temperature}°C
+      </div>
+    });
+   
+    setHistory(mySearchResults)
+
+
+  }
+
 
   return (
     <>
@@ -64,6 +94,9 @@ function Main( { setUserLoggedIn}){
           </div>
           <div className="weather">{ weather_descriptions }</div>
         </div>
+      <div>
+          { history }
+      </div>
       </div>
     </>
   )
