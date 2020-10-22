@@ -20,6 +20,7 @@ function App() {
 
   return (
     <div className="app">
+     
       <main>
         {!userLoggedIn && <Homescreen setUserLoggedIn={setUserLoggedIn} />}
         {userLoggedIn && <Main  setUserLoggedIn={setUserLoggedIn} />}

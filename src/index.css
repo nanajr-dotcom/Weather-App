@@ -97,6 +97,7 @@ main{
   border-radius: 16px;
   padding: 15px 55px;
   position: flex; 
+  margin-right: 250px;
 
 }
 
@@ -129,7 +130,8 @@ main{
   text-align: center;
 }
 .weather-box-main{
-  display: flex
+  display: flex;
+  margin-top: 150px;
 }
 
 
